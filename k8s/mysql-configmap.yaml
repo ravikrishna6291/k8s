@@ -3,6 +3,6 @@ kind: ConfigMap
 metadata:
   name: db-conf
 data:
- host: kumar-mysql
- name: kumar_db
+ host: database-1.cjxub0tpu6fy.us-east-2.rds.amazonaws.com
+ name: dev_petclinic
 

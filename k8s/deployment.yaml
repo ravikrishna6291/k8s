@@ -1,36 +1,36 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: petclinic-k8s-mysql
+  name: petclinic
   labels:
-    name: petclinic-k8s-mysql
+    name: petclinic
 spec:
   ports:
     - port: 80      
       targetPort: 8080  
       protocol: TCP
   selector:           
-    app: petclinic-k8s-mysql
+    app: petclinic
   type: LoadBalancer       
 
 ---
 apiVersion: apps/v1 
 kind: Deployment    
 metadata:              
-  name: petclinic-k8s-mysql
+  name: petclinic
 spec:                
   selector:         
     matchLabels:
-      app: petclinic-k8s-mysql
+      app: petclinic
   replicas: 3        
   template:
     metadata:
       labels:        
-        app: petclinic-k8s-mysql
+        app: petclinic
     spec:
       containers:
-        - name: petclinic-k8s-mysql
-          image: kumar5483/petclinic-k8s-mysql:1.0 
+        - name: petclinic
+          image: 426831243303.dkr.ecr.us-east-2.amazonaws.com/petclinic-k8s:latest
           ports:
             - containerPort: 8080                
           env:   # Setting Enviornmental Variables
