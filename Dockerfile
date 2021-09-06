@@ -5,9 +5,9 @@ RUN  unzip apache-tomcat-9.0.52-windows-x64.zip
 RUN mv apache-tomcat-9.0.52 tomcat
 RUN chmod -R 700 tomcat
 WORKDIR /tmp
-WORKDIR /tmp/k8s                                                        
+WORKDIR /tmp/spring-framework-petclinic                                 
 RUN mvn clean package
-WORKDIR /tmp/k8s/target                  
+WORKDIR /tmp/spring-framework-petclinic/target                  
 RUN cp -R petclinic.war /tmp/tomcat/webapps/
 EXPOSE 8080
 CMD chmod +x /tmp/tomcat/bin/catalina.sh
