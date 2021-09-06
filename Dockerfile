@@ -7,7 +7,7 @@ RUN chmod -R 700 tomcat
 WORKDIR /tmp
 WORKDIR /tmp/spring-framework-petclinic/
 RUN pwd
-RUN mvn clean package
+RUN mvn clean install
 WORKDIR /tmp/spring-framework-petclinic/target                  
 RUN cp -R petclinic.war /tmp/tomcat/webapps/
 EXPOSE 8080
