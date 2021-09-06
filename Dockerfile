@@ -1,5 +1,4 @@
 FROM maven:3.6.3-openjdk-11 AS maven
-RUN yum update -y && yum upgrade -y && yum install git -y && yum install unzip -y
 WORKDIR /opt
 RUN wget https://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.50/bin/apache-tomcat-9.0.50-windows-x64.zip
 RUN  unzip apache-tomcat-9.0.50-windows-x64.zip
