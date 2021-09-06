@@ -5,7 +5,8 @@ RUN  unzip apache-tomcat-9.0.52-windows-x64.zip
 RUN mv apache-tomcat-9.0.52 tomcat
 RUN chmod -R 700 tomcat
 WORKDIR /tmp
-WORKDIR /tmp/spring-framework-petclinic                                 
+WORKDIR /tmp/spring-framework-petclinic
+RUN ls -ltrh
 RUN mvn clean package
 WORKDIR /tmp/spring-framework-petclinic/target                  
 RUN cp -R petclinic.war /tmp/tomcat/webapps/
